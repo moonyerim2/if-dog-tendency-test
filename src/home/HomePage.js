@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-  const startClick = (event) => {
-    // move page2
-    console.log("move page 2");
+  const navigate = useNavigate();
+
+  const startClick = () => {
+    navigate("/test");
   };
+
   return (
     <div className="container">
       <header>
