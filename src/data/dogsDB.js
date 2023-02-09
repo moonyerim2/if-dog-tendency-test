@@ -8,6 +8,8 @@ import {
 } from "firebase/firestore";
 import { app } from "./fbase";
 
+// enable, fieldNames = ["name", "id", "mbti", "contents", "img", "counts"]
+// List 는 id 순서로 정렬
 class Dogs {
   constructor() {
     this.db = getFirestore(app);
@@ -30,6 +32,7 @@ class Dogs {
   };
 
   // name 속성을 통한 데이터 결과 반환
+  // return Object
   get = (onUpdate, name) => {
     const coll = collection(this.db, "dogs");
 
@@ -43,9 +46,52 @@ class Dogs {
     });
   };
 
+  // id를 통한 해당 요소 반환
+  // id 는 필드값
+  // return String
+  getFieldValueById = (onUpdate, id, fieldName) => {
+    const coll = collection(this.db, "dogs");
+
+    onSnapshot(coll, (snapshot) => {
+      const dogObj = snapshot.docs.filter((doc) => doc.data().id == id).at(0);
+      let fieldVal = "";
+
+      if (fieldName == "name") {
+        fieldVal = dogObj.id;
+      } else {
+        fieldVal = dogObj.data()[fieldName];
+      }
+
+      onUpdate(fieldVal);
+    });
+  };
+
+  // mbti를 통한 해당 요소 반환
+  // mbti 는 필드값
+  // return String
+  getFieldValueByMbti = (onUpdate, mbti, fieldName) => {
+    const coll = collection(this.db, "dogs");
+
+    onSnapshot(coll, (snapshot) => {
+      const dogObj = snapshot.docs
+        .filter((doc) => doc.data().mbti == mbti)
+        .at(0);
+
+      let fieldVal = "";
+
+      if (fieldName == "name") {
+        fieldVal = dogObj.id;
+      } else {
+        fieldVal = dogObj.data()[fieldName];
+      }
+      console.log(fieldVal);
+      onUpdate(fieldVal);
+    });
+  };
+
   // DB에서 특정 column 리스트 형태로 반환
-  // enable, cols = ["name", "id", "mbti", "contents", "img", "counts"]
-  getColumnDatas = (onUpdate, element) => {
+  // return List
+  getFieldValues = (onUpdate, fieldName) => {
     const coll = collection(this.db, "dogs");
 
     onSnapshot(coll, (snapshot) => {
@@ -53,10 +99,10 @@ class Dogs {
 
       snapshot.docs.map((document) => {
         const dog = document.data();
-        if (element == "name") {
+        if (fieldName == "name") {
           datas[dog.id - 1] = document.id;
         } else {
-          datas[dog.id - 1] = dog[element];
+          datas[dog.id - 1] = dog[fieldName];
         }
       });
 
@@ -65,6 +111,7 @@ class Dogs {
   };
 
   // 총 참여자수 반환
+  // return Number
   getParticipants = (onUpdate) => {
     const coll = collection(this.db, "dogs");
 
@@ -78,6 +125,7 @@ class Dogs {
   };
 
   // 각 data 의 비율 리스트 형태로 반환
+  // return List
   getRatios = (onUpdate, totalCounts) => {
     const coll = collection(this.db, "dogs");
 

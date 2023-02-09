@@ -6,6 +6,9 @@ function Result({ dogs }) {
   const [ratios, setRatios] = useState([]);
   const [colDatas, setColDatas] = useState([]);
 
+  const [dataByMbti, setDataByMbti] = useState("");
+  const [dataById, setDataById] = useState("");
+
   const dog = {
     name: "시베리안 허스키",
     id: 5,
@@ -23,7 +26,9 @@ function Result({ dogs }) {
   useEffect(() => {
     dogs.getParticipants(setTotal);
     dogs.getRatios(setRatios, total);
-    dogs.getColumnDatas(setColDatas, "name");
+    dogs.getFieldValues(setColDatas, "name");
+    dogs.getFieldValueByMbti(setDataByMbti, "ISFJ", "contents");
+    dogs.getFieldValueById(setDataById, "1", "name");
   }, [total]);
 
   return (
@@ -50,7 +55,7 @@ function Result({ dogs }) {
       <ul>
         {ratios.map((num, i) => {
           return (
-            <li>
+            <li key={i}>
               <h1>{colDatas[i]}</h1>
               {String(num) + "% "}
               <br />
@@ -59,6 +64,10 @@ function Result({ dogs }) {
           );
         })}
       </ul>
+
+      <span>{dataById}</span>
+      <br />
+      <span>{dataByMbti}</span>
     </div>
   );
 }
