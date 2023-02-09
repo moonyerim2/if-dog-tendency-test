@@ -16,18 +16,10 @@ function Result({ dogs }) {
     counts: 1,
   };
 
-  // 개 종류 추가할 때 or 성향조사 참여자수 갱신할 때
-  // const onDogAdd = (e) => {
-  //   e.preventDefault();
-  //   dogs.add(dog);
-  // };
-
-  // 결과 반환
   useEffect(() => {
     dogs.get(setResult, dog.name);
   }, []);
 
-  // dogs 참여자수와 각 비율
   useEffect(() => {
     dogs.getParticipants(setTotal);
     dogs.getRatios(setRatios, total);

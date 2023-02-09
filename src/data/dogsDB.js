@@ -13,6 +13,8 @@ class Dogs {
     this.db = getFirestore(app);
   }
 
+  // 데이터 추가 또는 갱신
+  // 기존에 있던 데이터는 그대로 추가할 시에 counts++ 갱신
   add = async (dog) => {
     const docRef = doc(this.db, "dogs", dog.name);
     const docSnap = await getDoc(docRef);
@@ -27,6 +29,7 @@ class Dogs {
     });
   };
 
+  // name 속성을 통한 데이터 결과 반환
   get = (onUpdate, name) => {
     const coll = collection(this.db, "dogs");
 
@@ -40,6 +43,8 @@ class Dogs {
     });
   };
 
+  // DB에서 특정 column 리스트 형태로 반환
+  // enable, cols = ["name", "id", "mbti", "contents", "img", "counts"]
   getColumnDatas = (onUpdate, element) => {
     const coll = collection(this.db, "dogs");
 
@@ -59,6 +64,7 @@ class Dogs {
     });
   };
 
+  // 총 참여자수 반환
   getParticipants = (onUpdate) => {
     const coll = collection(this.db, "dogs");
 
@@ -71,6 +77,7 @@ class Dogs {
     });
   };
 
+  // 각 data 의 비율 리스트 형태로 반환
   getRatios = (onUpdate, totalCounts) => {
     const coll = collection(this.db, "dogs");
 
