@@ -4,12 +4,12 @@ const ResultContext = createContext();
 function ResultProvider({ children }) {
   const [result, setResult] = useState("");
   const [count, setCount] = useState({
-    ENTJ: 0,
-    ESFJ: 0,
-    ISFJ: 0,
-    ISTJ: 0,
-    INTP: 0,
-    ENFP: 0,
+    welshCorgi: 0,
+    retriever: 0,
+    schnauzer: 0,
+    husky: 0,
+    beagle: 0,
+    chihuahua: 0,
   });
 
   const scoreUp = (types) => {
