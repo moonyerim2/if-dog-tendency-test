@@ -1,10 +1,15 @@
+import TestPage from "./test/TestPage";
+import { ResultProvider } from "./test/ResultProvider";
 import ResultPage from "./result/ResultPage";
 
 function App() {
   return (
-    <div className="App">
-      <ResultPage />
-    </div>
+    <>
+      <ResultProvider>
+        <TestPage />
+        <ResultPage />
+      </ResultProvider>
+    </>
   );
 }
 

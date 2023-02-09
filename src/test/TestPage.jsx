@@ -3,7 +3,7 @@ import LinearDeterminate from "./LinearDeterminate";
 import { ResultContext } from "./ResultProvider";
 import { qnaList } from "./qna";
 
-function Test() {
+function TestPage() {
   const { scoreUp, countScore, setResult } = useContext(ResultContext);
   const [index, setIndex] = useState(0);
   const { q, a } = qnaList[index];
@@ -36,4 +36,4 @@ function Test() {
   );
 }
 
-export default Test;
+export default TestPage;
