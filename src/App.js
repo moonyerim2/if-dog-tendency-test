@@ -1,15 +1,17 @@
 import TestPage from "./test/TestPage";
-import { ResultProvider } from "./test/ResultProvider";
+import HomePage from "./home/HomePage";
 import ResultPage from "./result/ResultPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <ResultProvider>
-        <TestPage />
-        <ResultPage />
-      </ResultProvider>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="test" element={<TestPage />} />
+        <Route path="result" element={<ResultPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
