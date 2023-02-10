@@ -1,0 +1,7 @@
+body {
+  background-image: url(./desktop-bg.png);
+  background-position: 50%;
+  background-repeat: repeat-y;
+  height: 100vh;
+  overflow: hidden;
+}
