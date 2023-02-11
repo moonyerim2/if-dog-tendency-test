@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function RetryBtn() {
+function Retry() {
   const navigate = useNavigate();
   const goHome = () => {
     navigate("/");
@@ -9,4 +8,4 @@ function RetryBtn() {
   return <button onClick={goHome}>Retry</button>;
 }
 
-export default RetryBtn;
+export default Retry;
