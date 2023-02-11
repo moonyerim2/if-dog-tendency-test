@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+
+// !!!!! [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+
 const KakaoShareButton = () => {
   useEffect(() => {
     createKakaoButton();
@@ -19,14 +22,13 @@ const KakaoShareButton = () => {
         container: "#kakaotalk-sharing-btn",
         objectType: "feed",
         content: {
-          title: "딸기 치즈 케익",
-          description: "#케익 #딸기 #삼평동 #카페 #분위기 #소개팅",
+          title: "IF-DOG",
+          description: "#내가개라면 #어떤 #개일까?",
           imageUrl:
-            "http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png",
+            "https://littledeep.com/wp-content/uploads/2019/04/littledeep_puppy_sns.png",
           link: {
-            // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-            mobileWebUrl: "https://developers.kakao.com",
-            webUrl: "https://developers.kakao.com",
+            mobileWebUrl: "https://naver.com",
+            webUrl: "https://naver.com",
           },
         },
         social: {
@@ -36,17 +38,10 @@ const KakaoShareButton = () => {
         },
         buttons: [
           {
-            title: "웹으로 보기",
+            title: "웹으로 보기!",
             link: {
-              mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com",
-            },
-          },
-          {
-            title: "앱으로 보기",
-            link: {
-              mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com",
+              mobileWebUrl: "https://naver.com",
+              webUrl: "https://naver.com",
             },
           },
         ],
