@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: white;
+  background: transparent;
   width: 350px;
   height: 300px;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 100px;
   display: flex;
   border-radius: 10px;
 `;
@@ -16,6 +17,7 @@ export const Wrapper = styled.div`
 
 export const Header = styled.div`
   margin-bottom: 30px;
+  margin-left: 130px;
 `;
 
 export const Title = styled.h5`
@@ -48,7 +50,7 @@ export const LangColorBoxWrapper = styled.div`
 `;
 
 export const PieWrapper = styled.div`
-  margin-top: 70px;
+  margin-top: 30px;
 `;
 
 export const LangText = styled.span`

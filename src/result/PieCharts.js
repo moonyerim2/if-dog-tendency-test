@@ -29,46 +29,54 @@ export default function PieCharts({ dogs }) {
             전체 참여자수 기준
           </PieChartsComponents.Description>
         </PieChartsComponents.Header>
-        <PieChartsComponents.RatioWrapper>
-          {dogsDataArr.map((dog, idx) => (
-            <PieChartsComponents.LangColorBoxWrapper
-              key={`${dog.name}-${dog.value}`}
-            >
-              <PieChartsComponents.LangColorBox idx={COLORS[idx]} />
-              <div>
-                <PieChartsComponents.LangText>
-                  {dog.value}%
-                </PieChartsComponents.LangText>
-                <PieChartsComponents.LangText>
-                  {dog.name}
-                </PieChartsComponents.LangText>
-              </div>
-            </PieChartsComponents.LangColorBoxWrapper>
-          ))}
-        </PieChartsComponents.RatioWrapper>
-      </PieChartsComponents.Wrapper>
+        <PieChartsComponents.PieWrapper>
+          <PieChart width={400} height={200}>
+            <Pie
+              data={dogsDataArr}
+              cx="50%"
+              cy="50%"
+              innerRadius={40}
+              outerRadius={70}
+              fill="#8884d8"
+              dataKey="value"
+              isAnimationActive={false}
+              label={({
+                cx,
+                cy,
+                midAngle,
+                innerRadius,
+                outerRadius,
+                index,
+              }) => {
+                const RADIAN = Math.PI / 180;
+                const radius = 25 + innerRadius + (outerRadius - innerRadius);
+                const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-      <PieChartsComponents.PieWrapper>
-        <PieChart width={200} height={200}>
-          <Pie
-            data={dogsDataArr}
-            cx="50%"
-            cy="50%"
-            innerRadius={40}
-            outerRadius={70}
-            fill="#8884d8"
-            dataKey="value"
-            isAnimationActive={false}
-          >
-            {dogsDataArr.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-          </Pie>
-        </PieChart>
-      </PieChartsComponents.PieWrapper>
+                return (
+                  <text
+                    x={x}
+                    y={y}
+                    fill="#8884d8"
+                    textAnchor={x > cx ? "start" : "end"}
+                    dominantBaseline="central"
+                    fontSize="15px"
+                  >
+                    {dogsDataArr[index].name} ({dogsDataArr[index].value}%)
+                  </text>
+                );
+              }}
+            >
+              {dogsDataArr.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Pie>
+          </PieChart>
+        </PieChartsComponents.PieWrapper>
+      </PieChartsComponents.Wrapper>
     </PieChartsComponents.Container>
   );
 }
