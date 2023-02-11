@@ -1,23 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 
-// !!!!! [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-
+// 처음만 두번클릭해야 작동됨 / 창이여러개 나오는 듯 함
 const KakaoShareButton = () => {
+  const [text, setText] = useState("공유");
+  const forceUpdate = useCallback(() => setText("공유"));
+
+  console.log("kakao rendering");
+  console.log("kakao rendering2");
   useEffect(() => {
     createKakaoButton();
-  }, []);
+    setText("share");
+  }, [text]);
+
+  // !!!!! [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
   const createKakaoButton = () => {
     // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근이 가능합니다
     if (window.Kakao) {
       const kakao = window.Kakao;
 
-      console.log(kakao);
-      console.log(kakao.Share);
       // 중복 initialization 방지
       if (!kakao.isInitialized()) {
-        // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
         kakao.init(process.env.REACT_APP_SHARE_KAKAO_LINK_KEY);
       }
+
       kakao.Share.createDefaultButton({
         container: "#kakaotalk-sharing-btn",
         objectType: "feed",
@@ -31,11 +36,6 @@ const KakaoShareButton = () => {
             webUrl: "https://naver.com",
           },
         },
-        social: {
-          likeCount: 286,
-          commentCount: 45,
-          sharedCount: 845,
-        },
         buttons: [
           {
             title: "웹으로 보기!",
@@ -48,10 +48,11 @@ const KakaoShareButton = () => {
       });
     }
   };
+
   return (
     <div className="kakao-share-button">
       {/* Kakao share button */}
-      <button id="kakaotalk-sharing-btn">
+      <button id="kakaotalk-sharing-btn" onClick={forceUpdate}>
         <img src="/icons/kakao.png" alt="kakao-share-icon" />
       </button>
     </div>
