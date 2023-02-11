@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import Layout from "./layout";
 
 function ShareBtn() {
-  return <div>Share</div>;
+  return <Layout />;
 }
 
 export default ShareBtn;
