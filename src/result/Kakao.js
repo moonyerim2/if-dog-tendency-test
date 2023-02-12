@@ -5,8 +5,6 @@ const KakaoShareButton = () => {
   const [text, setText] = useState("공유");
   const forceUpdate = useCallback(() => setText("공유"));
 
-  console.log("kakao rendering");
-  console.log("kakao rendering2");
   useEffect(() => {
     createKakaoButton();
     setText("share");
