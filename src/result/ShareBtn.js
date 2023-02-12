@@ -1,8 +1,8 @@
 import React, { useEffect, useCallback, useState } from "react";
 import KakaoShareButton from "./Kakao";
 const Share = () => {
-  const [text, setText] = useState("공유");
-  const forceUpdate = useCallback(() => setText("공유"));
+  const [, update] = useState({});
+  const forceUpdate = useCallback(() => update({}));
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://developers.kakao.com/sdk/js/kakao.js";
