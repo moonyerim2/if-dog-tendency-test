@@ -15,35 +15,77 @@ import { app } from "./fbase";
 class Dogs {
   constructor() {
     this.db = getFirestore(app);
+    this.allDogName = {
+      retriever: "리트리버",
+      beagle: "비글",
+      welshCorgi: "웰시코기",
+      schnauzer: "슈나우저",
+      husky: "시베리안 허스키",
+      chihuahua: "치와와",
+    };
   }
 
-  // 데이터 추가 또는 갱신
+  // 종으로 검색 데이터 추가 또는 갱신
   // 기존에 있던 데이터는 그대로 추가할 시에 counts++ 갱신
-  add = async (dog) => {
-    const docRef = doc(this.db, "dogs", dog.name);
+  update = async (species) => {
+    const docRef = doc(this.db, "dogs", this.allDogName[species]);
     const docSnap = await getDoc(docRef);
-    const nextCounts = Number(docSnap.data().counts) + 1;
+    const dog = docSnap.data();
+
+    const nextCounts = Number(dog.counts) + 1;
 
     setDoc(docRef, {
       id: dog.id,
-      mbti: dog.mbti,
+      species: dog.species,
       contents: dog.contents,
       img: dog.img,
       counts: nextCounts,
     });
   };
 
-  // name 속성을 통한 데이터 결과 => return Object
-  get = (onUpdate, name) => {
+  // species 속성을 통한 데이터 결과 => return Object
+  get = (onUpdate, species) => {
     const coll = collection(this.db, "dogs");
-
     onSnapshot(coll, (snapshot) => {
-      const dogObj = snapshot.docs.filter((doc) => doc.id == name).at(0);
+      const dogObj = snapshot.docs
+        .filter((doc) => doc.data().species == species)
+        .at(0);
       const dog = {
         ...dogObj.data(),
         name: dogObj.id,
       };
       onUpdate(dog);
+    });
+  };
+
+  // species 속성을 통한 데이터 결과 => return Object
+  getDogById = (onUpdate, id) => {
+    const coll = collection(this.db, "dogs");
+
+    onSnapshot(coll, (snapshot) => {
+      const dogObj = snapshot.docs.filter((doc) => doc.data().id == id).at(0);
+      const dog = {
+        ...dogObj.data(),
+        name: dogObj.id,
+      };
+      onUpdate(dog);
+    });
+  };
+
+  // name 속성을 통한 데이터 결과 => return return List , element type Object
+  getRatioNameArr = (onUpdate, total) => {
+    const coll = collection(this.db, "dogs");
+
+    onSnapshot(coll, (snapshot) => {
+      let datas = [];
+      snapshot.docs.map((document) => {
+        const dog = document.data();
+        datas[dog.id - 1] = {
+          value: Math.floor((dog.counts / total) * 100),
+          name: document.id,
+        };
+      });
+      onUpdate(datas);
     });
   };
 
@@ -66,16 +108,15 @@ class Dogs {
     });
   };
 
-  // mbti 는 필드값
-  // mbti를 통한 특정 Field의 Value => return String
-  getFieldValueByMbti = (onUpdate, mbti, fieldName) => {
+  // species 는 필드값
+  // species를 통한 특정 Field의 Value => return String
+  getFieldValueBySpecies = (onUpdate, species, fieldName) => {
     const coll = collection(this.db, "dogs");
 
     onSnapshot(coll, (snapshot) => {
       const dogObj = snapshot.docs
-        .filter((doc) => doc.data().mbti == mbti)
+        .filter((doc) => doc.data().species == species)
         .at(0);
-
       let fieldVal = "";
 
       if (fieldName == "name") {
@@ -83,7 +124,7 @@ class Dogs {
       } else {
         fieldVal = dogObj.data()[fieldName];
       }
-      console.log(fieldVal);
+
       onUpdate(fieldVal);
     });
   };
