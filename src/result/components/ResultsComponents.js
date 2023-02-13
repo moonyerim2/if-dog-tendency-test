@@ -39,7 +39,7 @@ export const Title = styled.h1`
 `;
 
 export const ResultSubTitle = styled.h4`
-  width: 176px;
+  width: 100%;
   height: 30px;
 
   font-family: "Inter";
@@ -59,7 +59,7 @@ export const ResultSubTitle = styled.h4`
 `;
 
 export const ResultTitle = styled.h4`
-  width: 92px;
+  width: 100%;
   height: 61px;
 
   font-family: "Inter";

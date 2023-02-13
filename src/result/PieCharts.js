@@ -39,8 +39,6 @@ export default function PieCharts({ dogs }) {
               outerRadius={70}
               fill="#8884d8"
               dataKey="value"
-              width={600}
-              height={310}
               isAnimationActive={false}
               label={({
                 cx,
