@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell } from "recharts";
-import * as PieChartsComponents from "./componets/PieChartComponents";
+import * as PieChartsComponents from "./components/PieChartComponents";
 
 export default function PieCharts({ dogs }) {
   const COLORS = [
@@ -30,7 +30,7 @@ export default function PieCharts({ dogs }) {
           </PieChartsComponents.Description>
         </PieChartsComponents.Header>
         <PieChartsComponents.PieWrapper>
-          <PieChart width={400} height={200}>
+          <PieChart width={500} height={210}>
             <Pie
               data={dogsDataArr}
               cx="50%"
@@ -39,6 +39,8 @@ export default function PieCharts({ dogs }) {
               outerRadius={70}
               fill="#8884d8"
               dataKey="value"
+              width={600}
+              height={310}
               isAnimationActive={false}
               label={({
                 cx,

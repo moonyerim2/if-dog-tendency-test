@@ -1,5 +1,8 @@
 import React, { useEffect, useCallback, useState } from "react";
+import styled from "styled-components";
+
 import KakaoShareButton from "./Kakao";
+
 const Share = () => {
   const [, update] = useState({});
   const forceUpdate = useCallback(() => update({}));
@@ -12,10 +15,6 @@ const Share = () => {
       document.body.removeChild(script);
     };
   }, []);
-  return (
-    <div onClick={forceUpdate}>
-      <KakaoShareButton />
-    </div>
-  );
+  return <KakaoShareButton />;
 };
 export default Share;
