@@ -1,4 +1,35 @@
 import React, { useEffect, useCallback, useState } from "react";
+import styled from "styled-components";
+
+const Btn = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 500px;
+  height: 65px;
+
+  background: #feeb00;
+  border-radius: 15px;
+  cursor: pointer;
+
+  margin-bottom: 20px;
+`;
+
+const Span = styled.span`
+  height: 30px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  margin-left: 20px;
+
+  color: #111111;
+`;
 
 // 처음만 두번클릭해야 작동됨 / 창이여러개 나오는 듯 함
 const KakaoShareButton = () => {
@@ -48,12 +79,11 @@ const KakaoShareButton = () => {
   };
 
   return (
-    <div className="kakao-share-button">
+    <Btn id="kakaotalk-sharing-btn" onClick={forceUpdate}>
       {/* Kakao share button */}
-      <button id="kakaotalk-sharing-btn" onClick={forceUpdate}>
-        <img src="/icons/kakao.png" alt="kakao-share-icon" />
-      </button>
-    </div>
+      <img src="/kakao.png" />
+      <Span>내 결과 공유하기</Span>
+    </Btn>
   );
 };
 export default KakaoShareButton;

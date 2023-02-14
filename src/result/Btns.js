@@ -4,7 +4,14 @@ import OzCtaBtns from "./OzCtaBtns";
 
 function Btns() {
   return (
-    <div>
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <Share />
       <Retry />
       <OzCtaBtns />

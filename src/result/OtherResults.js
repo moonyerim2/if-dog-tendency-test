@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getRandomIdArr } from "../data/getRandomIdArr";
 
+import * as OtherResultsComponents from "./components/OtherResultsComponents";
+
 function OtherResults({ dogs, species }) {
   // const [dog, setDog] = useState({});
   const [firstRandomDog, setFirstRandomDog] = useState({});
@@ -13,25 +15,25 @@ function OtherResults({ dogs, species }) {
   }, []);
 
   return (
-    <div>
-      <h1>다른 종 결과보기</h1>
-      <br />
-      <ul>
-        <li>
-          <h2>{firstRandomDog.name}</h2>
-          <br />
-          <span>{firstRandomDog.contents}</span>
-          <br />
-          <br />
-          <br />
-        </li>
-        <li>
-          <h2>{secondRandomDog.name}</h2>
-          <br />
-          <span>{secondRandomDog.contents}</span>
-        </li>
-      </ul>
-    </div>
+    <OtherResultsComponents.Container>
+      <OtherResultsComponents.Title>
+        다른 종 결과보기
+      </OtherResultsComponents.Title>
+      <OtherResultsComponents.Box>
+        <OtherResultsComponents.ImgBox>
+          <OtherResultsComponents.Img src={firstRandomDog.img} />
+          <OtherResultsComponents.ResultTitle>
+            {firstRandomDog.name}
+          </OtherResultsComponents.ResultTitle>
+        </OtherResultsComponents.ImgBox>
+        <OtherResultsComponents.ImgBox>
+          <OtherResultsComponents.Img src={secondRandomDog.img} />
+          <OtherResultsComponents.ResultTitle>
+            {secondRandomDog.name}
+          </OtherResultsComponents.ResultTitle>
+        </OtherResultsComponents.ImgBox>{" "}
+      </OtherResultsComponents.Box>{" "}
+    </OtherResultsComponents.Container>
   );
 }
 

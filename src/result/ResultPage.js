@@ -21,7 +21,11 @@ function ResultPage() {
   }, []);
 
   return (
-    <div>
+    <div
+      style={{
+        height: "100%",
+      }}
+    >
       <Result species={result} dogs={dogs} />
       <PieCharts dogs={dogs} />
       <OtherResults species={result} dogs={dogs} />
