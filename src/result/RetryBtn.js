@@ -9,16 +9,14 @@ const Btn = styled.div`
 
   width: 100%;
   max-width: 500px;
-  height: 65px;
+  height: 46px;
 
   background: #fa9d00;
-  border-radius: 15px;
+  border-radius: 6px;
   cursor: pointer;
 
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 18px;
   line-height: 30px;
 
   color: #ffffff;

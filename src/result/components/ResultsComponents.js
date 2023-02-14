@@ -6,7 +6,7 @@ export const Container = styled.div`
   background: transparent;
   max-height: 832px;
   height: 100%;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 `;
 
 export const Box = styled.div`
@@ -18,13 +18,11 @@ export const Box = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 25px;
   line-height: 36px;
-  padding-top: 110px;
-  padding-bottom: 41px;
+  padding-top: 80px;
+  padding-bottom: 20px;
   width: 100%;
   height: 36px;
   text-align: center;
@@ -43,15 +41,13 @@ export const ResultSubTitle = styled.h4`
   height: 30px;
 
   font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
-  font-size: 28px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 20px;
 
   color: #909090;
 
   /* Inside auto layout */
-  padding-bottom: 20px;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -60,19 +56,17 @@ export const ResultSubTitle = styled.h4`
 
 export const ResultTitle = styled.h4`
   width: 100%;
-  height: 61px;
+  height: 50px;
 
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 700;
-  font-size: 48px;
-  line-height: 61px;
+  font-size: 25px;
+  line-height: 30px;
   /* identical to box height */
 
   color: #fa9d00;
 
   /* Inside auto layout */
-  padding-bottom: 25px;
+  padding: 0 20px;
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -81,19 +75,11 @@ export const ResultTitle = styled.h4`
 `;
 
 export const ResultBody = styled.span`
-  width: 500px;
+  max-width: 500px;
   height: 120px;
-
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 30px;
-
-  color: #111111;
-
-  /* Inside auto layout */
-
+  font-size: 16px;
+  line-height: 25px;
   flex: none;
   order: 3;
   flex-grow: 0;
@@ -101,7 +87,6 @@ export const ResultBody = styled.span`
 
 export const ResultImg = styled.img`
   width: 100%;
-  max-width: 250px;
-
-  padding-bottom: 30px;
+  max-width: 200px;
+  padding-bottom: 15px;
 `;

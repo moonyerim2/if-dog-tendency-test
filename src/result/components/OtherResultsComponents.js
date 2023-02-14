@@ -26,38 +26,25 @@ export const ImgBox = styled.div`
   width: 100%;
   cursor: pointer;
 `;
-export const Title = styled.h1`
-  width: 100%;
-  height: 36px;
 
-  font-family: "Inter";
-  font-style: normal;
+export const Title = styled.h1`
+  margin-bottom: 15px;
+  width: 100%;
+  height: 100%;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 36px;
-  margin-bottom: 20px;
   text-align: center;
-  color: #111111;
 `;
 
 export const ResultTitle = styled.h4`
   width: 100%;
-  max-width: 250px;
-  height: 24px;
-
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 24px;
-
-  color: #111111;
+  font-size: 18px;
   text-align: center;
 `;
 
 export const Img = styled.img`
   width: 100%;
-  max-width: 250px;
-
-  padding-bottom: 30px;
+  max-width: 180px;
+  margin-bottom: 20px;
 `;

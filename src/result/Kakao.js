@@ -9,26 +9,24 @@ const Btn = styled.div`
 
   width: 100%;
   max-width: 500px;
-  height: 65px;
+  height: 46px;
 
   background: #feeb00;
-  border-radius: 15px;
+  border-radius: 6px;
   cursor: pointer;
+
+  font-weight: 700;
+  font-size: 18px;
 
   margin-bottom: 20px;
 `;
 
 const Span = styled.span`
-  height: 30px;
+  margin-left: 10px;
+`;
 
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 30px;
-  margin-left: 20px;
-
-  color: #111111;
+const Logo = styled.img`
+  width: 24px;
 `;
 
 // 처음만 두번클릭해야 작동됨 / 창이여러개 나오는 듯 함
@@ -81,7 +79,7 @@ const KakaoShareButton = () => {
   return (
     <Btn id="kakaotalk-sharing-btn" onClick={forceUpdate}>
       {/* Kakao share button */}
-      <img src="/kakao.png" />
+      <Logo src="/kakao.png" />
       <Span>내 결과 공유하기</Span>
     </Btn>
   );

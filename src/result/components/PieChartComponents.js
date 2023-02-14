@@ -8,22 +8,17 @@ export const Container = styled.div`
   align-items: center;
   padding: 0px;
   gap: 10px;
-
   width: 100%;
 
   /* Inside auto layout */
 
   flex: none;
   order: 1;
-  margin-bottom: 100px;
-`;
-
-export const Wrapper = styled.div`
-  margin-top: 24px;
+  margin-bottom: 60px;
 `;
 
 export const Header = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-align: center;
 `;
 
@@ -32,25 +27,27 @@ export const Title = styled.h5`
   width: 100%;
   height: 100%;
 
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 25px;
   line-height: 36px;
 
   color: ${(props) => props.theme.darkGray};
 `;
 
 export const Description = styled.span`
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 74px;
+  font-size: 14px;
+  line-height: 30px;
 
   color: ${(props) => props.theme.lightGray};
 `;
 
 export const PieWrapper = styled.div`
-  margin-top: 30px;
+  .recharts-wrapper {
+    width: 100% !important;
+  }
+
+  .recharts-surface {
+    width: 100% !important;
+  }
 `;
