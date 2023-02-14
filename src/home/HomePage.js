@@ -95,6 +95,7 @@ const HomePage = () => {
             backgroundColor: 'transparent',
             color: 'transparent',
             border: 'none',
+            cursor:'pointer',
           }}
         >
           Start
