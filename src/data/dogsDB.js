@@ -6,6 +6,7 @@ import {
   getFirestore,
   onSnapshot,
 } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { app } from "./fbase";
 
 // enable, fieldNames = ["name", "id", "mbti", "contents", "img", "counts"]
@@ -15,6 +16,7 @@ import { app } from "./fbase";
 class Dogs {
   constructor() {
     this.db = getFirestore(app);
+    this.storage = getStorage(app);
     this.allDogName = {
       retriever: "리트리버",
       beagle: "비글",
@@ -39,6 +41,7 @@ class Dogs {
       species: dog.species,
       contents: dog.contents,
       img: dog.img,
+      subtitle: dog.subtitle,
       counts: nextCounts,
     });
   };
@@ -70,6 +73,12 @@ class Dogs {
       };
       onUpdate(dog);
     });
+  };
+
+  getImg = (onUpdate, species) => {
+    const dogRef = ref(this.storage, `images/${species}.jpg`);
+    // dogRef.child();
+    getDownloadURL(dogRef).then((url) => onUpdate(url));
   };
 
   // name 속성을 통한 데이터 결과 => return return List , element type Object

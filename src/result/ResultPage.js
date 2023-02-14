@@ -1,26 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
-import OtherResults from "./OtherResults";
-import Result from "./Result";
-import Btns from "./Btns";
-import PieCharts from "./PieCharts";
-import Dogs from "../data/dogsDB";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import OtherResults from './OtherResults';
+import Result from './Result';
+import Btns from './Btns';
+import PieCharts from './PieCharts';
 
-import { ResultContext } from "../test/ResultProvider";
+import Dogs from '../data/dogsDB';
 
 const dogs = new Dogs();
-
 function ResultPage() {
-  //정상적으로 테스트가 끝나면 result에 강아지 종류가 담겨있습니다.
-  const { result } = useContext(ResultContext);
+  const params = useParams();
+  const result = params.species;
 
-  const [dog, setDog] = useState({});
-
-  useEffect(() => {
-    dogs.get(setDog, result);
-  }, []);
-  
   return (
-    <div>
+    <div
+      style={{
+        height: '100%',
+        padding: '0 20px',
+      }}
+    >
       <Result species={result} dogs={dogs} />
       <PieCharts dogs={dogs} />
       <OtherResults species={result} dogs={dogs} />

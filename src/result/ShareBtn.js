@@ -1,21 +1,25 @@
-import React, { useEffect, useCallback, useState } from "react";
-import KakaoShareButton from "./Kakao";
+import React, { useEffect, useState } from 'react';
+
+import KakaoShareButton from './Kakao';
+
 const Share = () => {
-  const [, update] = useState({});
-  const forceUpdate = useCallback(() => update({}));
+  const [shareButton, setShareButton] = useState(false);
+
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
+    const script = document.createElement('script');
+    script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
     script.async = true;
     document.body.appendChild(script);
+
+    script.onload = () => {
+      setShareButton(true);
+    };
+
     return () => {
       document.body.removeChild(script);
     };
   }, []);
-  return (
-    <div onClick={forceUpdate}>
-      <KakaoShareButton />
-    </div>
-  );
+
+  return shareButton && <KakaoShareButton />;
 };
 export default Share;

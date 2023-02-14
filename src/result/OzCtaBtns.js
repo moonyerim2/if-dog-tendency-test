@@ -6,7 +6,6 @@ const Container = styled.div`
   text-align:center;
   color:black;
   overflow:hidden;
-}
 `;
 
 const Input = styled.input`
@@ -20,6 +19,7 @@ const Input = styled.input`
   background-color: #FFF7EB;
   color:black;
 `;
+
 function OzCtaBtns() {
   return (
     <Container>
