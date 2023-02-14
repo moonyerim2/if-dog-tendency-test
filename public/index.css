@@ -4,4 +4,24 @@ body {
   background-repeat: repeat-y;
   height: 100vh;
   overflow: hidden;
+  font-family: 'FlowerSalt';
+  font-size: 2.5rem;
 }
+@font-face {
+  font-family: 'FlowerSalt';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/FlowerSalt.woff2') format('woff2');
+}
+@media screen and (max-width:575px){
+  body {
+  background-image: url(./mobile-bg-575.jpg);
+  background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width:360px){
+  body {
+  background-image: url(./mobile-bg.png);
+  background-repeat: no-repeat;
+  }
+}
+
