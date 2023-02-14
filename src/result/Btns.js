@@ -1,13 +1,12 @@
 import Share from "./ShareBtn";
 import Retry from "./RetryBtn";
-import OzCtaBtns from "./OzCtaBtns";
-
+import CtaModalBtn from "./CtaModalBtn.js";
 function Btns() {
   return (
     <div>
       <Share />
       <Retry />
-      <OzCtaBtns />
+      <CtaModalBtn/>
     </div>
   );
 }

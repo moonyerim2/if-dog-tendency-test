@@ -3,7 +3,6 @@ import OtherResults from "./OtherResults";
 import Result from "./Result";
 import Btns from "./Btns";
 import PieCharts from "./PieCharts";
-
 import Dogs from "../data/dogsDB";
 
 import { ResultContext } from "../test/ResultProvider";
@@ -19,7 +18,7 @@ function ResultPage() {
   useEffect(() => {
     dogs.get(setDog, result);
   }, []);
-
+  
   return (
     <div>
       <Result species={result} dogs={dogs} />
