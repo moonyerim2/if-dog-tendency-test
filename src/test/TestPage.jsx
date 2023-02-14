@@ -44,8 +44,9 @@ function TestPage() {
 
   const onClick = (type) => {
     if (index === qnaList.length - 1) {
-      setResult(countScore());
-      navigate('/result');
+      const result = countScore();
+      navigate(`/result/${result}`);
+      setResult(result);
       return;
     }
     scoreUp(type);

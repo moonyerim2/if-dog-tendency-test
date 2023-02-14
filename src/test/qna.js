@@ -79,7 +79,7 @@ export const qnaList = [
         type: ['beagle'],
       },
       {
-        answer: '4. 똑같이 쳐다본다.',
+        answer: '똑같이 쳐다본다.',
         type: ['welshCorgi', 'husky'],
       },
     ],
