@@ -56,7 +56,7 @@ export const qnaList = [
     q: '5. 나는 세상을',
     a: [
       {
-        answer: '배하고 말테야.',
+        answer: '지배하고 말테야.',
         type: ['welshCorgi', 'retriever'],
       },
       { answer: '구원하고 말테야.', type: ['husky'] },
