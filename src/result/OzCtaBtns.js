@@ -32,12 +32,12 @@ function OzCtaBtns() {
         전문가 양성 과정 1기 2팀이 구현한 결과물입니다.
       </h1>
       <InputBox>
-        <a href="https://ozcodingschool.com/">
-          <Input type="button" value="OZ 코딩스쿨 알아보기"></Input>
-        </a>
-        <a href="https://legend-palm-1f1.notion.site/2-_-cce963197d034ae5b0ab4a1bd3530365">
-          <Input type="button" value="팀 소개 페이지"></Input>
-        </a>
+      <a href="https://ozcodingschool.com/">
+        <Input type="button" value="OZ 코딩스쿨 알아보기"></Input>
+      </a>
+      <a href="https://www.notion.so/2team-Info-b53eb76edaf1494b922628b76b6faf58">
+        <Input type="button" value="팀 소개 페이지"></Input>
+      </a>
       </InputBox>
     </Container>
   );
