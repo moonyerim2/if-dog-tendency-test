@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import styled from 'styled-components';
 
-const Btn = styled.div`
+const Btn = styled.button`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -12,6 +12,7 @@ const Btn = styled.div`
   height: 46px;
 
   background: #feeb00;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
 
@@ -31,13 +32,9 @@ const Logo = styled.img`
 
 // 처음만 두번클릭해야 작동됨 / 창이여러개 나오는 듯 함
 const KakaoShareButton = () => {
-  const [text, setText] = useState('공유');
-  const forceUpdate = useCallback(() => setText('공유'));
-
   useEffect(() => {
     createKakaoButton();
-    setText('share');
-  }, [text]);
+  }, []);
 
   // !!!!! [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
   const createKakaoButton = () => {
@@ -77,11 +74,12 @@ const KakaoShareButton = () => {
   };
 
   return (
-    <Btn id="kakaotalk-sharing-btn" onClick={forceUpdate}>
+    <Btn id="kakaotalk-sharing-btn">
       {/* Kakao share button */}
       <Logo src="/kakao.png" />
       <Span>내 결과 공유하기</Span>
     </Btn>
   );
 };
+
 export default KakaoShareButton;
