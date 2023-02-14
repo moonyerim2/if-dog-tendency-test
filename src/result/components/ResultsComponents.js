@@ -39,9 +39,6 @@ export const Title = styled.h1`
 export const ResultSubTitle = styled.h4`
   width: 100%;
   height: 30px;
-
-  font-family: "Inter";
-  font-weight: 400;
   font-size: 18px;
   line-height: 20px;
 

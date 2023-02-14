@@ -1,3 +1,23 @@
+body {
+  max-width: 500px;
+  margin: 0 auto;
+  background-image: url(./desktop-bg.png);
+  background-position: 50%;
+  background-repeat: repeat-y;
+}
+
+*,
+*::after,
+*::before,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Pretendard';
+}
+
 @font-face {
   font-family: 'FlowerSalt';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/FlowerSalt.woff2')
@@ -16,15 +36,6 @@
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
     format('woff');
   font-weight: 700;
-}
-
-body {
-  max-width: 500px;
-  margin: 0 auto;
-  background-image: url(./desktop-bg.png);
-  background-position: 50%;
-  background-repeat: repeat-y;
-  font-family: 'pretendard';
 }
 
 @media screen and (max-width: 575px) {

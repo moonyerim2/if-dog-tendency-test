@@ -17,6 +17,7 @@ function ResultPage() {
       style={{
         height: '100%',
         padding: '0 20px',
+        fontFamily: 'Pretendard',
       }}
     >
       <Result species={result} dogs={dogs} />
