@@ -10,19 +10,18 @@ const BtnBox = styled.div`
   max-width: 500px;
   margin: 30px 0px;
 `;
+
 const Btn = styled.div`
-  width: 100%;
-  height: 65px;
-  border-radius: 15px;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 46px;
+  border-radius: 6px;
+  cursor: pointer;
 
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 18px;
   line-height: 30px;
   color: #ffffff;
 
@@ -31,10 +30,12 @@ const Btn = styled.div`
     color: #ffffff;
   }
 `;
+
 const OzPageBtn = styled(Btn)`
   background: #1552f0;
   margin-top: 20px;
 `;
+
 const TeamPageBtn = styled(Btn)`
   background: #fa9d00;
   margin-top: 20px;
@@ -42,10 +43,7 @@ const TeamPageBtn = styled(Btn)`
 
 const Info = styled.h1`
   margin-top: 100px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 25px;
+  font-size: 16px;
   line-height: 30px;
 
   color: #919191;

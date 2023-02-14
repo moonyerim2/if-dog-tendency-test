@@ -11,7 +11,6 @@ import { ResultContext } from "../test/ResultProvider";
 const dogs = new Dogs();
 
 function ResultPage() {
-  //정상적으로 테스트가 끝나면 result에 강아지 종류가 담겨있습니다.
   const { result } = useContext(ResultContext);
 
   const [dog, setDog] = useState({});
@@ -24,6 +23,7 @@ function ResultPage() {
     <div
       style={{
         height: "100%",
+        padding: "0 20px",
       }}
     >
       <Result species={result} dogs={dogs} />
