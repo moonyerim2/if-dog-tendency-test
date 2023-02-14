@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import OtherResults from './OtherResults';
 import Result from './Result';
 import Btns from './Btns';
@@ -6,12 +7,10 @@ import PieCharts from './PieCharts';
 
 import Dogs from '../data/dogsDB';
 
-import { ResultContext } from '../test/ResultProvider';
-
 const dogs = new Dogs();
-
 function ResultPage() {
-  const { result } = useContext(ResultContext);
+  const params = useParams();
+  const result = params.species;
 
   return (
     <div

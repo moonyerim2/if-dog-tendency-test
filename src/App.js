@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="test" element={<TestPage />} />
-        <Route path="result" element={<ResultPage />} />
+        <Route path="result/:species" element={<ResultPage />} />
       </Routes>
     </BrowserRouter>
   );
