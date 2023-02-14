@@ -1,25 +1,44 @@
+@font-face {
+  font-family: 'FlowerSalt';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/FlowerSalt.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
+    format('woff');
+  font-weight: 700;
+}
+
 body {
+  max-width: 500px;
+  margin: 0 auto;
   background-image: url(./desktop-bg.png);
   background-position: 50%;
   background-repeat: repeat-y;
-  font-family: 'FlowerSalt';
-  font-size: 2.5rem;
+  font-family: 'pretendard';
 }
-@font-face {
-  font-family: 'FlowerSalt';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/FlowerSalt.woff2') format('woff2');
-}
-@media screen and (max-width:575px){
+
+@media screen and (max-width: 575px) {
   body {
-  background-image: url(./mobile-bg-575.jpg);
-  background-repeat: no-repeat;
+    background-image: url(./mobile-bg-575.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
   }
 }
 
-@media screen and (max-width:360px){
+@media screen and (max-width: 360px) {
   body {
-  background-image: url(./mobile-bg.png);
-  background-repeat: no-repeat;
+    background-image: url(./mobile-bg.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
   }
 }
-
