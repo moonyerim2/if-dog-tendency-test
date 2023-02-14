@@ -1,17 +1,18 @@
 import React from "react";
 import OzCtaBtns from "./OzCtaBtns";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 //="from "./ModalBasic.module.css';
 //import styled from "@emotion/styled";
 
 const Wrapper=styled.div`
     position:absolute;
-    width:330px;
-    height:327px;
     top:50%;
-    left:50%
-    transform: translate(-50%, -50%);
-    background-color:#FFC0B8;
+    left:50%;
+    transform: translate(-50%, 50%);
+    width:330px;
+    height: 170px;
+    background-color:#FFFF;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius:8px;
 `;
 function ModalBasic({ setModalOpen }){
@@ -30,7 +31,6 @@ function ModalBasic({ setModalOpen }){
                     right: 10,
                     top:10,
                     color: "red",
-                    backgroundColor:"tomato",
                     border:"none"
                 }}
                 onClick={closeModal}>
