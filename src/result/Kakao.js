@@ -54,7 +54,7 @@ const KakaoShareButton = () => {
           title: 'IF-DOG',
           description: '#내가개라면 #어떤 #개일까?',
           imageUrl:
-            'https://littledeep.com/wp-content/uploads/2019/04/littledeep_puppy_sns.png',
+            'https://user-images.githubusercontent.com/75062526/218786683-d373c8be-52d6-4d51-bb38-cafe15269966.jpg',
           link: {
             mobileWebUrl: window.location.href,
             webUrl: window.location.href,
