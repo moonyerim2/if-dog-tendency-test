@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
-
+import DotLoader from './DotLoader';
 import Dogs from '../data/dogsDB';
 
 const Wrapper = styled.div`
@@ -39,19 +39,23 @@ const CountPerson = styled.span`
 const HomePage = () => {
   const navigate = useNavigate();
   const [total, setTotal] = useState(0); //초기값 0으로 설정, USER수가 증가할때마다 setTotal에 저장
-
+  const [loader, setLoader]=useState(true);
+  
   const startClick = () => {
     navigate('/test');
   };
 
   useEffect(() => {
+    
+    setTimeout(()=>{setLoader(false)}, 3000);//DotLoader
+    
     const dogs = new Dogs(); //DB불러옴
     dogs.getParticipants(setTotal); //총 참여자 수
   }, [total]);
 
   return (
     <Wrapper>
-      <header>
+      {loader ? <DotLoader/> : <><header>
         <h2 style={{ color: 'transparent' }}>Hot 도그</h2>
         <TitleImg
           src={`${process.env.PUBLIC_URL}/header.png`}
@@ -71,7 +75,6 @@ const HomePage = () => {
 
       <CountPerson>
         현재 {total} 명이 참여 했어요.
-        {/*버튼 하단으로 위치 조정 예정 */}
       </CountPerson>
 
       <div
@@ -101,8 +104,8 @@ const HomePage = () => {
           Start
         </button>
         <StartButtonImg src={`${process.env.PUBLIC_URL}/start-button.png`} />
-      </div>
-      <footer></footer>
+      </div></> }
+      
     </Wrapper>
   );
 };

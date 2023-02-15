@@ -31,6 +31,7 @@ function ModalBasic({ setModalOpen }) {
           top: 10,
           color: 'red',
           border: 'none',
+          cursor:"pointer",
         }}
         onClick={closeModal}
       >
