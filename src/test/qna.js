@@ -102,12 +102,12 @@ export const qnaList = [
     q: '8. 겨울에 만났을때',
     a: [
       {
-        answer: '옷*100',
+        answer: '옷은 최대한 두껍게',
         type: ['schnauzer', 'beagle'],
       },
-      { answer: '겨울 싫어', type: ['welshCorgi', 'husky'] },
+      { answer: '"이불밖은 위험해" 나가지 않는다.', type: ['welshCorgi', 'husky'] },
       {
-        answer: '기분전환으로 화려한 옷 입기',
+        answer: '얼어죽어도 화려한 옷 입기',
         type: ['retriever', 'chihuahua'],
       },
     ],
@@ -137,7 +137,7 @@ export const qnaList = [
         answer: '인생은 게임',
         type: ['retriever', 'chihuahua', 'welshCorgi'],
       },
-      { answer: '무슨 얘기하는 중?', type: ['beagle'] },
+      { answer: '무슨 얘기하는 중? (관심 X)', type: ['beagle'] },
       {
         answer: '생각하지 않을래',
         type: ['schnauzer', 'husky'],
