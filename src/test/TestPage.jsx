@@ -37,8 +37,10 @@ const Question = styled.p`
 
 function TestPage() {
   const navigate = useNavigate();
-  const { scoreUp, countScore, setResult } = useContext(ResultContext);
+  const { scoreUp, countScore, setResult, setIsCompleted } =
+    useContext(ResultContext);
   const [index, setIndex] = useState(0);
+
   const { q, a } = qnaList[index];
   const progress = ((index + 1) / qnaList.length) * 100;
 
@@ -47,6 +49,7 @@ function TestPage() {
       const result = countScore();
       navigate(`/result/${result}`);
       setResult(result);
+      setIsCompleted(true);
       return;
     }
     scoreUp(type);
