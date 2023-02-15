@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
-import * as ResultComponents from "./components/ResultsComponents";
+import { useState, useEffect, useContext } from 'react';
+import * as ResultComponents from './components/ResultsComponents';
+import { ResultContext } from '../test/ResultProvider';
 
 function Result({ dogs, species }) {
+  const { isCompleted } = useContext(ResultContext);
   const [result, setResult] = useState({});
   const [total, setTotal] = useState(0);
-
-  const [img, setImg] = useState("");
+  const [img, setImg] = useState('');
 
   useEffect(() => {
     setImg(`/images/${species}.jpg`); // species
-    dogs.update(species);
+    if (isCompleted) dogs.update(species);
     dogs.get(setResult, species);
   }, []);
 

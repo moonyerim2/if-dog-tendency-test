@@ -1,8 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 const ResultContext = createContext();
 
 function ResultProvider({ children }) {
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState('');
+  const [isCompleted, setIsCompleted] = useState(false);
   const [count, setCount] = useState({
     welshCorgi: 0,
     retriever: 0,
@@ -25,14 +26,22 @@ function ResultProvider({ children }) {
     const resultToArray = Object.entries(count);
     return resultToArray.reduce(
       (result, [type, score]) => (score === max ? type : result),
-      ""
+      ''
     );
   };
 
   return (
     <>
       <ResultContext.Provider
-        value={{ result, count, scoreUp, countScore, setResult }}
+        value={{
+          result,
+          count,
+          isCompleted,
+          scoreUp,
+          countScore,
+          setResult,
+          setIsCompleted,
+        }}
       >
         {children}
       </ResultContext.Provider>
