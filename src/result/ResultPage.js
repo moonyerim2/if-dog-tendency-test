@@ -1,13 +1,13 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import OtherResults from "./OtherResults";
-import Result from "./Result";
-import Btns from "./Btns";
-import PieCharts from "./PieCharts";
-import CubeLoading from "../loading/cubeLoading";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import OtherResults from './OtherResults';
+import Result from './Result';
+import Btns from './Btns';
+import PieCharts from './PieCharts';
+import CubeLoading from '../loading/cubeLoading';
 
-import Dogs from "../data/dogsDB";
+import Dogs from '../data/dogsDB';
 
 const dogs = new Dogs();
 function ResultPage() {
@@ -19,15 +19,15 @@ function ResultPage() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 6000);
+    }, 3000);
   });
 
   return (
     <div
       style={{
-        height: "100%",
-        padding: "0 20px",
-        fontFamily: "Pretendard",
+        height: '100%',
+        padding: '0 20px',
+        fontFamily: 'Pretendard',
       }}
     >
       {loading ? (

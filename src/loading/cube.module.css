@@ -1,7 +1,10 @@
 .cube {
   position: absolute;
-  width: 140px;
-  height: 140px;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
   transform-style: preserve-3d;
 }
 
@@ -16,46 +19,46 @@
 }
 
 .front {
-  transform: translateZ(70px);
-  background: url("/public/images/beagle.jpg");
+  transform: translateZ(32px);
+  background: url('/public/images/beagle.jpg');
   background-size: cover;
 }
 .back {
-  transform: rotateY(180deg) translateZ(70px);
-  background: url("/public/images/schnauzer.jpg");
+  transform: rotateY(180deg) translateZ(32px);
+  background: url('/public/images/schnauzer.jpg');
   background-size: cover;
 }
 
 .left {
-  transform: rotateY(-90deg) translateZ(70px);
+  transform: rotateY(-90deg) translateZ(32px);
 
-  background: url("/public/images/chihuahua.jpg");
+  background: url('/public/images/chihuahua.jpg');
   background-size: cover;
 }
 .right {
-  transform: rotateY(90deg) translateZ(70px);
+  transform: rotateY(90deg) translateZ(32px);
 
-  background: url("/public/images/welshCorgi.jpg");
+  background: url('/public/images/welshCorgi.jpg');
   background-size: cover;
 }
 .top {
-  transform: rotateX(-90deg) translateZ(70px);
+  transform: rotateX(-90deg) translateZ(32px);
 
-  background: url("/public/images/husky.jpg");
+  background: url('/public/images/husky.jpg');
   background-size: cover;
 }
 .bottom {
-  transform: rotateX(90deg) translateZ(70px);
+  transform: rotateX(90deg) translateZ(32px);
 
-  background: url("/public/images/retriever.jpg");
+  background: url('/public/images/retriever.jpg');
   background-size: cover;
 }
 .cube {
-  animation: rotate 6s linear infinite;
+  animation: rotate 5s linear infinite;
 }
 @keyframes rotate {
   100% {
-    transform: translateY(100px) translateX(240px) scale(0.4)
+    transform: translateY(80px) translateX(100px) scale(0.4)
       rotate3d(4, 3, 1, 720deg);
   }
 }
