@@ -1,7 +1,7 @@
 body {
   max-width: 500px;
   margin: 0 auto;
-  background-image: url(./desktop-bg.png);
+  background-image: url(../public/desktop-bg.png);
   background-position: 50%;
   background-repeat: repeat-y;
 }
@@ -40,7 +40,7 @@ h6 {
 
 @media screen and (max-width: 575px) {
   body {
-    background-image: url(./mobile-bg-575.jpg);
+    background-image: url(../public/mobile-bg-575.jpg);
     background-repeat: no-repeat;
     background-position: 0 0;
   }
@@ -48,7 +48,7 @@ h6 {
 
 @media screen and (max-width: 360px) {
   body {
-    background-image: url(./mobile-bg.png);
+    background-image: url(../public/mobile-bg.png);
     background-repeat: no-repeat;
     background-position: 0 0;
   }
