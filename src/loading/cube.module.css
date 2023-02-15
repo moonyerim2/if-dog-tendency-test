@@ -1,0 +1,61 @@
+.cube {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  transform-style: preserve-3d;
+}
+
+.cube > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  line-height: 200px;
+  opacity: 0.91;
+  border: 3px solid black;
+}
+
+.front {
+  transform: translateZ(70px);
+  background: url("/public/images/beagle.jpg");
+  background-size: cover;
+}
+.back {
+  transform: rotateY(180deg) translateZ(70px);
+  background: url("/public/images/schnauzer.jpg");
+  background-size: cover;
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(70px);
+
+  background: url("/public/images/chihuahua.jpg");
+  background-size: cover;
+}
+.right {
+  transform: rotateY(90deg) translateZ(70px);
+
+  background: url("/public/images/welshCorgi.jpg");
+  background-size: cover;
+}
+.top {
+  transform: rotateX(-90deg) translateZ(70px);
+
+  background: url("/public/images/husky.jpg");
+  background-size: cover;
+}
+.bottom {
+  transform: rotateX(90deg) translateZ(70px);
+
+  background: url("/public/images/retriever.jpg");
+  background-size: cover;
+}
+.cube {
+  animation: rotate 6s linear infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: translateY(100px) translateX(470px) scale(0.4)
+      rotate3d(4, 3, 1, 720deg);
+  }
+}
