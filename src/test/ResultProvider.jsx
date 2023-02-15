@@ -13,6 +13,17 @@ function ResultProvider({ children }) {
     chihuahua: 0,
   });
 
+  const resetCount = () => {
+    setCount({
+      welshCorgi: 0,
+      retriever: 0,
+      schnauzer: 0,
+      husky: 0,
+      beagle: 0,
+      chihuahua: 0,
+    });
+  };
+
   const scoreUp = (types) => {
     types.forEach((type) => {
       setCount((prevState) => {
@@ -41,6 +52,7 @@ function ResultProvider({ children }) {
           countScore,
           setResult,
           setIsCompleted,
+          resetCount,
         }}
       >
         {children}

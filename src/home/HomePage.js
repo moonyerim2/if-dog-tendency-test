@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { ResultContext } from '../test/ResultProvider';
 import DotLoader from './DotLoader';
 import Dogs from '../data/dogsDB';
 
@@ -42,12 +43,17 @@ const CountPerson = styled.span`
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const { resetCount } = useContext(ResultContext);
   const [total, setTotal] = useState(0); //초기값 0으로 설정, USER수가 증가할때마다 setTotal에 저장
   const [loader, setLoader] = useState(true);
 
   const startClick = () => {
     navigate('/test');
   };
+
+  useEffect(() => {
+    resetCount();
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
