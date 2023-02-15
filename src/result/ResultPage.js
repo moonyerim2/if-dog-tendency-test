@@ -5,7 +5,7 @@ import OtherResults from "./OtherResults";
 import Result from "./Result";
 import Btns from "./Btns";
 import PieCharts from "./PieCharts";
-import CubeLoading from "../loading/cube/cubeLoading";
+import CubeLoading from "../loading/cubeLoading";
 
 import Dogs from "../data/dogsDB";
 
