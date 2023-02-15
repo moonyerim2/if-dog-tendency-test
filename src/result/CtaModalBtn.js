@@ -29,7 +29,7 @@ function CtaModalBtn(){
     };
     return (
         <div style={{maxWidth:"500px", width:"100%", marginTop:"20px"}}>
-            <Btn onClick={showModal}>MORE</Btn>
+            <Btn onClick={showModal}>인간으로 돌아가기</Btn>
             {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
         </div>
     );
