@@ -1,7 +1,8 @@
-import TestPage from "./test/TestPage";
-import HomePage from "./home/HomePage";
-import ResultPage from "./result/ResultPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './index.module.css';
+import TestPage from './test/TestPage';
+import HomePage from './home/HomePage';
+import ResultPage from './result/ResultPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
