@@ -5,14 +5,18 @@ import DotLoader from './DotLoader';
 import Dogs from '../data/dogsDB';
 
 const Wrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   max-width: 575px;
   min-width: 300px;
-  margin: 0 auto;
 `;
 
 const TitleImg = styled.img`
   display: block;
-  margin: 80px auto 0;
+  margin: 0 auto;
   width: 80%;
 `;
 

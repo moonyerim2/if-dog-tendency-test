@@ -3,11 +3,8 @@ import { motion } from 'framer-motion';
 
 const Top = {
   ///최상위 컨테이너
-  position: 'absolute',
   display: 'flex',
-  top: '47%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  justifyContent: 'center',
 };
 
 const loadingContainer = {
