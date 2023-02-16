@@ -1,7 +1,6 @@
 # 내가 개가 된다면?
 
-![if-dog-thumbnail](https://user-images.githubusercontent.com/75062526/218747794-a7a61c77-d04b-4e50-be83-bbaa0e22b589.jpg)
----
+## ![if-dog-thumbnail](https://user-images.githubusercontent.com/75062526/218747794-a7a61c77-d04b-4e50-be83-bbaa0e22b589.jpg)
 
 ## 기능 목록
 
@@ -30,9 +29,13 @@
     - [x] 참여자의 각 결과 비율 반환
           <br><br>
 
-  - [ ] 테스트 결과 Componet Html 설계
+  - [x] 테스트 결과 Componet Html 설계
 
   <br>
+
+- [x] 파이 차트로 전체 비율 보여주기
+
+  - [x] Rechart 사용
 
 - [x] 오즈 코딩스쿨, 팀 페이지 연결 버튼(CTA)
 
